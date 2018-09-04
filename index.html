@@ -4,16 +4,75 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Coming Soon</title>
 <link href="tools/style.css" rel="stylesheet" type="text/css" />
+<link href="tools/modal_styles.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="tools/jquery.min.js"></script>
 <script type="text/javascript" src="tools/cufon-yui.js"></script>
 <script type="text/javascript" src="tools/Comfortaa_250-Comfortaa_700.font.js"></script>
 <script type="text/javascript">
+
 	Cufon.replace('h1', {fontFamily: 'Arial'});
 	Cufon.replace('p.c_soon strong', {fontFamily: 'Arial'});
+
+	window.onload = function() {
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks the button, open the modal
+		btn.onclick = function() {
+		    modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		    modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+}
+
+
+
+
+
 </script>
 
 </head>
 <body>
+
+<!-- The Modal -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+<!-- Modal content -->
+	<div class="modal-content">
+
+	 <div class="modal-header">
+		 <span class="close">&times;</span>
+		 <h2>Modal Header</h2>
+	 </div>
+
+	 <div class="modal-body">
+		 <p>Some text in the Modal Body</p>
+		 <p>Some other text...</p>
+	 </div>
+
+	 <div class="modal-footer">
+		 <h3>Modal Footer</h3>
+	 </div>
+
+	</div>
+</div>
+
 <div class="content_wrapper">
 	<div class="top_content">
 		<div class="header">
@@ -24,7 +83,7 @@
 				<h1>Snore Storm</h1>
 				<h3>Stop<strong> SNORING </strong> using a <strong>NATURE INSPIRED</strong> method for a better nights sleep!</h3>
 				<p>Duis est orci, accumsan ut hendrerit sed, semper eget nulla. Cras ullamcorper sapien ut dui faucibus vulputate. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-				<a href="#" class="get_notified"><strong>Get Notified</strong> on the day of launch!</a>
+				<a id="myBtn" href="#" class="get_notified"><strong>Get Notified</strong> on the day of launch!</a>
 			</div>
 		</div>
 	</div>
